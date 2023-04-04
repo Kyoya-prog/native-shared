@@ -15,7 +15,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "NativeShared",
-            path: "./NativeShared.xcframework"
+            path: "shared/swiftpackage/NativeShared.xcframework"
         ),
     ]
 )

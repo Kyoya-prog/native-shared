@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
+    id("com.chromaticnoise.multiplatform-swiftpackage") version "2.0.3"
 }
 
 kotlin {
@@ -26,6 +27,15 @@ kotlin {
             baseName = "shared"
         }
     }
+
+    multiplatformSwiftPackage {
+        packageName("NativeShared")
+        swiftToolsVersion("5.3")
+        targetPlatforms {
+            iOS { v("13") }
+        }
+    }
+
     
     sourceSets {
         val commonMain by getting
